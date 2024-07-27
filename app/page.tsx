@@ -1,5 +1,5 @@
 import Candidate from "@/components/Candidate";
-import { candidatesData } from "@/candidatesData";
+import { candidatesData } from "./candidatesData";
 import Navbar from "@/components/Navbar";
 
 export default function Home() {
