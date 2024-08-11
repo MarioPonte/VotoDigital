@@ -19,13 +19,14 @@ interface CandidateProps {
 
 const Candidate: React.FC<CandidateProps> = ({ name, image, color, votes, total }) => {
   let votesPercentage = ((votes * 100) / total).toFixed(2);
+  if(isNaN(Number(votesPercentage))) votesPercentage = "0";
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex justify-between items-center">
         <div className="flex gap-5 items-center">
           <div className="w-20 h-20 rounded-md bg-neutral-200">
-            <Image src={image} width={100} height={100} className="object-cover rounded-md" alt="Imagem candidato um" />
+            <Image src={image} width={100} height={100} className="object-cover rounded-md" alt={`Imagem candidato ${name}`} />
           </div>
           <span className="text-xl font-bold">{name}</span>
         </div>
